@@ -1,297 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K5G4R9TS3F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5G4R9TS3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K5G4R9TS3F');
+  </script>
 
-  gtag('config', 'G-K5G4R9TS3F');
-</script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
-<title>404</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  <!-- Prevent indexing of error pages -->
+  <meta name="robots" content="noindex, nofollow" />
 
-  body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #e5e7eb;
-    background:
-      radial-gradient(circle at 10% 0%, rgba(56,189,248,0.25) 0%, transparent 50%),
-      radial-gradient(circle at 90% 10%, rgba(244,114,182,0.22) 0%, transparent 55%),
-      radial-gradient(circle at 0% 80%, rgba(45,212,191,0.2) 0%, transparent 55%),
-      radial-gradient(circle at 100% 100%, #020617 0%, #020617 60%);
-    background-color: #020617;
-    animation: fadeIn 1.2s ease forwards;
-  }
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=2">
+  <link rel="icon" href="/assets/favicon/favicon.ico?v=2" sizes="any">
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  <title>404 | Page Not Found</title>
 
-  .card {
-    width: 92%;
-    max-width: 580px;
-    padding: 40px 34px 30px;
-    background: radial-gradient(circle at top left, rgba(15,23,42,0.96), rgba(15,23,42,0.9));
-    border-radius: 22px;
-    border: 1px solid rgba(148,163,184,0.6);
-    backdrop-filter: blur(18px);
-    box-shadow:
-      0 0 40px rgba(59,130,246,0.45),
-      0 24px 70px rgba(15,23,42,0.95);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Animated top accent line */
-  .accent-bar {
-    position: absolute;
-    top: 0;
-    left: -20%;
-    width: 140%;
-    height: 4px;
-    background-image: linear-gradient(
-      90deg,
-      #22c55e,
-      #22d3ee,
-      #6366f1,
-      #ec4899,
-      #22c55e
-    );
-    background-size: 200% 100%;
-    animation: slideBar 3s linear infinite;
-  }
-
-  @keyframes slideBar {
-    from { background-position: 0% 0%; }
-    to   { background-position: 200% 0%; }
-  }
-
-  /* Icon: Futuristic crane */
-  .icon-wrap {
-    margin-top: 28px;
-    margin-bottom: 22px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .icon {
-    width: 130px;
-    height: 96px;
-    position: relative;
-  }
-
-  .tower {
-    position: absolute;
-    left: 18px;
-    bottom: 20px;
-    width: 12px;
-    height: 58px;
-    background: linear-gradient(180deg, #38bdf8, #1d4ed8);
-    border-radius: 7px;
-    box-shadow:
-      0 0 0 2px #020617,
-      0 0 18px rgba(56,189,248,0.8);
-  }
-
-  .arm {
-    position: absolute;
-    left: 30px;
-    bottom: 64px;
-    width: 64px;
-    height: 8px;
-    background: linear-gradient(90deg, #22d3ee, #6366f1, #22c55e);
-    border-radius: 999px;
-    box-shadow:
-      0 0 0 1px #020617,
-      0 0 16px rgba(129,140,248,0.9);
-  }
-
-  .cable {
-    position: absolute;
-    left: 70px;
-    top: 22px;
-    width: 2px;
-    height: 34px;
-    background: #e5e7eb;
-    animation: sway 1.5s ease-in-out infinite alternate;
-    transform-origin: top center;
-  }
-
-  @keyframes sway {
-    from { transform: rotate(-4deg); }
-    to   { transform: rotate(4deg); }
-  }
-
-  .hook {
-    position: absolute;
-    left: -11px;
-    bottom: -13px;
-    width: 28px;
-    height: 14px;
-    background: radial-gradient(circle at top, #fbbf24, #f97316);
-    border-radius: 4px;
-    box-shadow:
-      0 0 0 2px #111827,
-      0 0 18px rgba(250,204,21,0.85);
-  }
-
-  .block {
-    position: absolute;
-    left: -14px;
-    bottom: -30px;
-    width: 36px;
-    height: 16px;
-    border-radius: 6px;
-    background: linear-gradient(135deg, #22c55e, #06b6d4, #818cf8);
-    box-shadow:
-      0 0 0 2px #1d2440,
-      0 0 22px rgba(129,140,248,0.9);
-  }
-
-  .eyebrow {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: #9ca3af;
-    margin-bottom: 16px;
-  }
-
-  .name {
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #f9fafb;
-    margin-bottom: 4px;
-  }
-
-  h1 {
-    font-size: 30px;
-    font-weight: 700;
-    color: #e5e7eb;
-    margin-bottom: 16px;
-  }
-
-  .subtitle {
-    font-size: 13px;
-    font-weight: 500;
-    color: #cbd5f5;
-    margin-bottom: 16px;
-  }
-
-  p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #d1d5db;
-    margin-bottom: 16px;
-  }
-
-  .highlight {
-    color: #38bdf8;
-    font-weight: 500;
-  }
-
-  .btn-row {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 6px;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 10px 18px;
-    font-size: 13px;
-    font-weight: 600;
-    border-radius: 999px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.13s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
-    flex: 1 1 0;
-    max-width: 200px;
-    text-align: center;
-    border: 1px solid transparent;
-  }
-
-  .btn-primary {
-    background: radial-gradient(circle at top left, #38bdf8, #1d4ed8);
-    color: #f9fafb;
-    border-color: rgba(191,219,254,0.9);
-    box-shadow:
-      0 0 18px rgba(56,189,248,0.6),
-      0 10px 24px rgba(15,23,42,0.7);
-  }
-
-  .btn-secondary {
-    background: radial-gradient(circle at top left, #22c55e, #06b6d4);
-    color: #f9fafb;
-    border-color: rgba(167,243,208,0.9);
-    box-shadow:
-      0 0 18px rgba(34,197,94,0.6),
-      0 10px 24px rgba(15,23,42,0.7);
-  }
-
-  .btn-primary:hover,
-  .btn-secondary:hover {
-    transform: translateY(-1px);
-    box-shadow:
-      0 0 24px rgba(59,130,246,1),
-      0 16px 30px rgba(15,23,42,0.95);
-  }
-
-  .email-line {
-    margin-bottom: 20px;
-    font-size: 13px;
-    color: #e5e7eb;
-    min-height: 1.2em;
-  }
-
-  .email-text {
-    color: #38bdf8;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
-  .copy-notice {
-    margin-left: 8px;
-    font-size: 11px;
-    color: #9ca3af;
-  }
-
-  .footnote {
-    margin-top: 40px;
-    font-size: 12px;
-    color: #9ca3af;
-  }
-
-  @media (max-width: 480px) {
-    .btn-row {
-      flex-direction: column;
-      align-items: stretch;
-    }
-    .btn {
-      max-width: none;
-      width: 100%;
-    }
-  }
-</style>
+  <link rel="stylesheet" href="/assets/css/404.css">
 </head>
 
 <body>
@@ -311,16 +44,20 @@
 
     <div class="eyebrow">Jianbiao Chen's portfolio</div>
 
-    <h1>Coming Soon</h1>
+    <h1>404 - Page not found</h1>
 
     <p>
-      I’m crafting a new home for ideas, projects, and experiments.
-      While the pixels fall into place, you can reach me directly below:
+      The page you’re looking for doesn’t exist (or temporarily unavailable).
+      Try heading back <span class="highlight">home</span>—or reach me directly below.
     </p>
 
     <div class="email-line" id="emailLine"></div>
 
     <div class="btn-row">
+      <a class="btn btn-neutral" href="/" aria-label="Go to homepage">
+        Home
+      </a>
+
       <a
         class="btn btn-primary"
         href="https://www.linkedin.com/in/jianbiaochen/"
@@ -330,11 +67,7 @@
         LinkedIn
       </a>
 
-      <button
-        class="btn btn-secondary"
-        type="button"
-        id="showEmailBtn"
-      >
+      <button class="btn btn-secondary" type="button" id="showEmailBtn">
         Email
       </button>
     </div>
@@ -397,12 +130,10 @@
 
       btn.addEventListener('click', function () {
         if (!revealed) {
-          // Show email
           renderEmail();
           revealed = true;
           btn.textContent = 'Email Shown';
         } else {
-          // Hide email
           emailLine.innerHTML = '';
           revealed = false;
           btn.textContent = 'Email';
