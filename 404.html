@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5G4R9TS3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K5G4R9TS3F');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Prevent indexing of error pages -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+
+  <title>404 | Page Not Found</title>
+
+  <link rel="stylesheet" href="/assets/css/404.css">
+</head>
+
+<body>
+  <div class="card">
+    <div class="accent-bar"></div>
+
+    <div class="icon-wrap">
+      <div class="icon">
+        <div class="tower"></div>
+        <div class="arm"></div>
+        <div class="cable">
+          <div class="hook"></div>
+          <div class="block"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eyebrow">Jianbiao Chen's portfolio</div>
+
+    <h1>404 - Page not found</h1>
+
+    <p>
+      The page you’re looking for doesn’t exist (or temporarily unavailable).
+      Try heading back <span class="highlight">home</span>—or reach me directly below.
+    </p>
+
+    <div class="email-line" id="emailLine"></div>
+
+    <div class="btn-row">
+      <a class="btn btn-neutral" href="/" aria-label="Go to homepage">
+        Home
+      </a>
+
+      <a
+        class="btn btn-primary"
+        href="https://www.linkedin.com/in/jianbiaochen/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+
+      <button class="btn btn-secondary" type="button" id="showEmailBtn">
+        Email
+      </button>
+    </div>
+
+    <div class="footnote">
+      Based in California · Open to senior product & advisory roles.
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const btn = document.getElementById('showEmailBtn');
+      const emailLine = document.getElementById('emailLine');
+      if (!btn || !emailLine) return;
+
+      const local = 'jc';
+      const domain = 'jianbiaochen.com';
+      const fullEmail = local + '@' + domain;
+
+      let revealed = false;
+      let copyTimeoutId = null;
+
+      function renderEmail() {
+        emailLine.innerHTML =
+          '<span class="email-label">Email: </span>' +
+          '<span id="emailText" class="email-text">' + fullEmail + '</span>' +
+          '<span id="copyNotice" class="copy-notice"></span>';
+
+        const emailTextEl = document.getElementById('emailText');
+        const copyNoticeEl = document.getElementById('copyNotice');
+
+        if (!emailTextEl || !copyNoticeEl) return;
+
+        emailTextEl.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(fullEmail).then(function () {
+              copyNoticeEl.textContent = 'Copied to clipboard';
+              if (copyTimeoutId) clearTimeout(copyTimeoutId);
+              copyTimeoutId = setTimeout(function () {
+                copyNoticeEl.textContent = '';
+              }, 1500);
+            }).catch(function () {
+              copyNoticeEl.textContent = 'Unable to copy';
+              if (copyTimeoutId) clearTimeout(copyTimeoutId);
+              copyTimeoutId = setTimeout(function () {
+                copyNoticeEl.textContent = '';
+              }, 1500);
+            });
+          } else {
+            copyNoticeEl.textContent = 'Press Ctrl+C / Cmd+C to copy';
+            if (copyTimeoutId) clearTimeout(copyTimeoutId);
+            copyTimeoutId = setTimeout(function () {
+              copyNoticeEl.textContent = '';
+            }, 2000);
+          }
+        });
+      }
+
+      btn.addEventListener('click', function () {
+        if (!revealed) {
+          renderEmail();
+          revealed = true;
+          btn.textContent = 'Email Shown';
+        } else {
+          emailLine.innerHTML = '';
+          revealed = false;
+          btn.textContent = 'Email';
+          if (copyTimeoutId) {
+            clearTimeout(copyTimeoutId);
+            copyTimeoutId = null;
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

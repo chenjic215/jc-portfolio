@@ -1,0 +1,49 @@
+# ---- OS / system ----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Desktop.ini
+
+# ---- Editor / IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---- Env / secrets ----
+.env
+.env.*
+*.pem
+*.key
+*.crt
+
+# ---- Dependencies (only if you use npm tooling) ----
+node_modules/
+
+# ---- Build / output (if you have any of these) ----
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.vite/
+
+# ---- Coverage / reports ----
+coverage/
+
+# ---- Local-only / misc ----
+*.bak
+*.tmp
+
+# ---- project-specific ignore ----
+assets/files/
